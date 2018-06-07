@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>More Advanced Stuff: Easy form validation with HTML5</title>
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+	<style>
+
+		textarea:focus, input:focus{
+			outline: 0;
+		}
+
+		input:focus:invalid,
+		textarea:focus:invalid{
+			border:1px solid #F5192F;
+			box-shadow:0 0 4px #F5192F;
+		}
+
+		input:focus:valid,
+		textarea:focus:valid{
+			border: 1px solid #64C364;
+			box-shadow: 0 0 4px #64C364;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+	<nav>
+		<a href="index.html">Basics</a>•
+		<a href="limits.html">Limits</a>•
+		<a href="styling.html">Styling</a>•
+		<a href="tooltips.html">Tooltips</a>•
+		<a class="active" href="patterns.html">Patterns</a>
+	</nav>
+
+	<form action="">
+		<div class="form-title-row">
+			<h1>Patterns</h1>
+		</div>
+
+		<div class="form-row">
+			<label>
+				<span>Name</span>
+				<input type="text" name="name" required>
+			</label>
+		</div>
+
+		<div class="form-row">
+			<label>
+				<span>Email</span>
+				<input type="email" name="email" required pattern="^\S+@\S+\.\S+$" title="example@mail.com">
+			</label>
+		</div>
+
+		<div class="form-row">
+			<label>
+				<span>Password</span>
+				<input type="password" name="password" required pattern="^(?=.*\d)[0-9a-zA-Z]{8,}$" title="Your password should be a minimum of 8 character long and must contain at least one number">
+			</label>
+		</div>
+
+		<div class="form-row">
+			<button type="submit">Submit Form</button>
+		</div>
+
+		<p class="explanation">Here we use custom patterns to validate this form's fields. See the source for more.</p>
+
+	</form>
+
+</body>
+
+</html>
